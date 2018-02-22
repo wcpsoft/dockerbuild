@@ -1,0 +1,44 @@
+version: "3"  
+services:
+  nginx:
+    image: daocloud.io/wcpsoft/nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    container_name: 'php56-nginx'
+    volumes:
+      - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
+      - /Users/ruixiangzhang/dockerdata/nginx-conf/tools.zrx.dev.aysaas.com:/etc/nginx/sites-enabled/tools.zrx.dev.aysaas.com:ro
+    depends_on:
+      - phpcli
+      - phpfpm
+    networks: 
+      - webnet
+    restart: always
+  phpcli:
+    image: daocloud.io/wcpsoft/php:5.6customcli
+    container_name: 'php56-phpcli'
+    volumes:
+      - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
+      - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
+      - /Users/ruixiangzhang/dockerdata/beanstalkd/data:/data:rw
+    ports:
+      - "11300:11300"
+    tty: true
+    networks: 
+      - webnet
+    restart: always
+  phpfpm:
+    image: daocloud.io/wcpsoft/php:5.6customfpm
+    container_name: 'php56-phpfpm'
+    ports:
+      - "9000:9000"
+    volumes:
+      - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
+      - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
+    networks: 
+      - webnet
+    restart: always
+networks:
+  webnet:
+    driver: bridge

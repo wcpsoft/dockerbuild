@@ -1,0 +1,16 @@
+version: "3"  
+services:
+  beanstalkd:
+    image: daocloud.io/wcpsoft/beanstalkd:latest
+    container_name: 'beanstalkd'
+    ports:
+      - "11300:11300"
+    volumes:
+      - /Users/ruixiangzhang/dockerdata/beanstalkd/data:/data:rw
+    networks: 
+      - webnet
+    tty: true
+    restart: always
+networks:
+  webnet:
+    driver: bridge
