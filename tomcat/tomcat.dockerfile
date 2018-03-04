@@ -1,6 +1,7 @@
 FROM daocloud.io/wcpsoft/java:7u80
 MAINTAINER admin@wcpsoft.cn
-RUN mkdir -p /usr/local/tomcat
+RUN mkdir -p /usr/local/tomcat && \
+    apk add freetds
 WORKDIR /usr/local/tomcat
 ADD soft/apache-tomcat-7.0.84 /usr/local/tomcat
 EXPOSE 8080
