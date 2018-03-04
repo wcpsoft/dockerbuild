@@ -8,10 +8,14 @@ services:
     container_name: 'php56-nginx'
     volumes:
       - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
+      - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
+      - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
       - /Users/ruixiangzhang/dockerdata/nginx-conf/tools.zrx.dev.aysaas.com:/etc/nginx/sites-enabled/tools.zrx.dev.aysaas.com:ro
+      - /Users/ruixiangzhang/dockerdata/nginx-conf/www.zrx.dev.aysaas.com:/etc/nginx/sites-enabled/www.zrx.dev.aysaas.com:ro
     depends_on:
       - phpcli
       - phpfpm
+      - nodejs
     networks: 
       - webnet
     restart: always
@@ -21,9 +25,7 @@ services:
     volumes:
       - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
       - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
-      - /Users/ruixiangzhang/dockerdata/beanstalkd/data:/data:rw
-    ports:
-      - "11300:11300"
+      - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
     tty: true
     networks: 
       - webnet
@@ -36,8 +38,33 @@ services:
     volumes:
       - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
       - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
+      - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
     networks: 
       - webnet
+    restart: always
+  nodejs:
+    image: daocloud.io/wcpsoft/nodejs:8.9.3
+    container_name: 'php56-nodejs'
+    volumes:
+      - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
+      - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
+      - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
+    tty: true
+    networks: 
+      - webnet
+    restart: always
+  beanstalkd:
+    image: daocloud.io/wcpsoft/beanstalkd:php56beanstalkd
+    container_name: 'php56-beanstalkd'
+    ports:
+      - "11300:11300"
+    volumes:
+      - /Users/ruixiangzhang/dockerdata/beanstalkd/data:/data:rw
+      - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
+      - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
+    networks: 
+      - webnet
+    tty: true
     restart: always
 networks:
   webnet:
