@@ -21,9 +21,11 @@ RUN apk upgrade --update && apk add \
         pecl install xdebug-2.6.0 && \
         pecl install mongodb-1.4.0 && \
         pecl install imagick-3.4.3 && \
+        pecl install rar && \
+        pecl install yaf && \
       docker-php-ext-enable iconv gd mcrypt \
         curl mbstring xml json dom zip imap xmlreader \
         xmlrpc xmlwriter mysqli opcache pcntl \
         pdo pdo_mysql phar posix  \
         readline sockets session soap hash simplexml bcmath bz2 \
-        calendar redis xdebug  mongodb imagick
+        calendar redis xdebug  mongodb imagick yaf rar

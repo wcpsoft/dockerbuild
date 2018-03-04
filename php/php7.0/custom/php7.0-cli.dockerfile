@@ -21,12 +21,14 @@ RUN apk upgrade --update && apk add \
         pecl install xdebug-2.6.0 && \
         pecl install mongodb-1.4.0 && \
         pecl install imagick-3.4.3 && \
+        pecl install rar && \
+        pecl install yaf && \
       docker-php-ext-enable iconv gd mcrypt \
         curl mbstring xml json dom zip imap xmlreader \
         xmlrpc xmlwriter mysqli opcache pcntl \
         pdo pdo_mysql phar posix  \
         readline sockets session soap hash simplexml bcmath bz2 \
-        calendar redis xdebug mongodb imagick && \
+        calendar redis xdebug mongodb imagick rar yaf && \
       php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
       php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
       php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
