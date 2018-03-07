@@ -1,9 +1,17 @@
-tomcat:
-  image: daocloud.io/wcpsoft/tomcat:7.0
-  container_name: 'docker-tomcat'
-  ports:
-    - "8080:8080"
-    - "5005:50005"
-  volumes:
-    - /Users/ruixiangzhang/workspace/webtools/target/webtools-0.0.1-SNAPSHOT:/usr/local/tomcat/webapps/webtools/:rw
-  restart: always
+version: "3"  
+services:
+  tomcat:
+    image: daocloud.io/wcpsoft/tomcat:7.0
+    container_name: 'docker-tomcat'
+    ports:
+      - "8080:8080"
+      - "5005:50005"
+    volumes:
+      - /Users/ruixiangzhang/workspace/sdketl/target/sdketl-0.0.1-SNAPSHOT:/usr/local/tomcat/webapps/sdketl/:rw
+    tty: true
+    networks: 
+      - webnet
+    restart: always
+networks:
+  webnet:
+    driver: bridge
