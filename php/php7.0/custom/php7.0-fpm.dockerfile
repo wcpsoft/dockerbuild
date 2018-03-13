@@ -28,4 +28,8 @@ RUN apk upgrade --update && apk add \
         xmlrpc xmlwriter mysqli opcache pcntl \
         pdo pdo_mysql phar posix  \
         readline sockets session soap hash simplexml bcmath bz2 \
-        calendar redis xdebug  mongodb imagick yaf rar
+        calendar redis xdebug  mongodb imagick yaf rar && \
+      echo "yaf.environ=development" >> /usr/local/etc/php/conf.d/docker-php-ext-yaf.ini && \
+      echo "yaf.use_namespace=ON" >> /usr/local/etc/php/conf.d/docker-php-ext-yaf.ini && \
+      echo "yaf.use_spl_autoload=ON" >> /usr/local/etc/php/conf.d/docker-php-ext-yaf.ini && \
+      echo "yaf.lowcase_path=OFF" >> /usr/local/etc/php/conf.d/docker-php-ext-yaf.ini 

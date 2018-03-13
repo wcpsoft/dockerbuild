@@ -8,6 +8,10 @@ services:
       - "5005:50005"
     volumes:
       - /Users/ruixiangzhang/workspace/sdketl/target/sdketl-0.0.1-SNAPSHOT:/usr/local/tomcat/webapps/sdketl/:rw
+    extra_hosts:
+      - "www.zrx.dev.aysaas.com:192.168.66.247"
+      - "static.zrx.dev.aysaas.com:192.168.66.247"
+      - "fileio.zrx.dev.aysaas.com:192.168.66.247"
     tty: true
     networks: 
       - webnet

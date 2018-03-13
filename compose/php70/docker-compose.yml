@@ -16,6 +16,10 @@ services:
       - phpcli
       - phpfpm
       - nodejs
+    extra_hosts:
+      - "www.zrx.dev.aysaas.com:192.168.66.247"
+      - "static.zrx.dev.aysaas.com:192.168.66.247"
+      - "fileio.zrx.dev.aysaas.com:192.168.66.247"
     networks: 
       - webnet
     restart: always
@@ -26,6 +30,10 @@ services:
       - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
       - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
       - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
+    extra_hosts:
+      - "www.zrx.dev.aysaas.com:192.168.66.247"
+      - "static.zrx.dev.aysaas.com:192.168.66.247"
+      - "fileio.zrx.dev.aysaas.com:192.168.66.247"
     tty: true
     networks: 
       - webnet
@@ -39,6 +47,10 @@ services:
       - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
       - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
       - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
+    extra_hosts:
+      - "www.zrx.dev.aysaas.com:192.168.66.247"
+      - "static.zrx.dev.aysaas.com:192.168.66.247"
+      - "fileio.zrx.dev.aysaas.com:192.168.66.247"
     networks: 
       - webnet
     restart: always
@@ -49,6 +61,10 @@ services:
       - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
       - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
       - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
+    extra_hosts:
+      - "www.zrx.dev.aysaas.com:192.168.66.247"
+      - "static.zrx.dev.aysaas.com:192.168.66.247"
+      - "fileio.zrx.dev.aysaas.com:192.168.66.247"
     tty: true
     networks: 
       - webnet
@@ -56,6 +72,10 @@ services:
   beanstalkd:
     image: daocloud.io/wcpsoft/beanstalkd:php70beanstalkd
     container_name: 'php70-beanstalkd'
+    extra_hosts:
+      - "www.zrx.dev.aysaas.com:192.168.66.247"
+      - "static.zrx.dev.aysaas.com:192.168.66.247"
+      - "fileio.zrx.dev.aysaas.com:192.168.66.247"
     ports:
       - "11300:11300"
     volumes:
