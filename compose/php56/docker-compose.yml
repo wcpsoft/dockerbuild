@@ -10,12 +10,18 @@ services:
       - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
       - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
       - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
+      - /Users/ruixiangzhang/workspace/Node-SaaS:/var/www/Node-SaaS:rw
       - /Users/ruixiangzhang/dockerdata/nginx-conf/tools.zrx.dev.aysaas.com:/etc/nginx/sites-enabled/tools.zrx.dev.aysaas.com:ro
       - /Users/ruixiangzhang/dockerdata/nginx-conf/www.zrx.dev.aysaas.com:/etc/nginx/sites-enabled/www.zrx.dev.aysaas.com:ro
     depends_on:
       - phpcli
       - phpfpm
       - nodejs
+    extra_hosts:
+      - "www.zrx.dev.aysaas.com:10.5.4.17"
+      - "static.zrx.dev.aysaas.com:10.5.4.17"
+      - "fileio.zrx.dev.aysaas.com:10.5.4.17"
+      - "nodestatic.zrx.dev.aysaas.com:10.5.4.17"
     networks: 
       - webnet
     restart: always
@@ -26,6 +32,12 @@ services:
       - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
       - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
       - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
+      - /Users/ruixiangzhang/workspace/Node-SaaS:/var/www/Node-SaaS:rw
+    extra_hosts:
+      - "www.zrx.dev.aysaas.com:10.5.4.17"
+      - "static.zrx.dev.aysaas.com:10.5.4.17"
+      - "fileio.zrx.dev.aysaas.com:10.5.4.17"
+      - "nodestatic.zrx.dev.aysaas.com:10.5.4.17"
     tty: true
     networks: 
       - webnet
@@ -39,16 +51,30 @@ services:
       - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
       - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
       - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
+      - /Users/ruixiangzhang/workspace/Node-SaaS:/var/www/Node-SaaS:rw
+    extra_hosts:
+      - "www.zrx.dev.aysaas.com:10.5.4.17"
+      - "static.zrx.dev.aysaas.com:10.5.4.17"
+      - "fileio.zrx.dev.aysaas.com:10.5.4.17"
+      - "nodestatic.zrx.dev.aysaas.com:10.5.4.17"
     networks: 
       - webnet
     restart: always
   nodejs:
     image: daocloud.io/wcpsoft/nodejs:8.9.3
     container_name: 'php56-nodejs'
+    ports:
+      - "5000:5000"
     volumes:
       - /Users/ruixiangzhang/workspace/tools:/var/www/tools:rw
       - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
       - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
+      - /Users/ruixiangzhang/workspace/Node-SaaS:/var/www/Node-SaaS:rw
+    extra_hosts:
+      - "www.zrx.dev.aysaas.com:10.5.4.17"
+      - "static.zrx.dev.aysaas.com:10.5.4.17"
+      - "fileio.zrx.dev.aysaas.com:10.5.4.17"
+      - "nodestatic.zrx.dev.aysaas.com:10.5.4.17"
     tty: true
     networks: 
       - webnet
@@ -62,6 +88,12 @@ services:
       - /Users/ruixiangzhang/dockerdata/beanstalkd/data:/data:rw
       - /Users/ruixiangzhang/workspace/qycloud:/var/www/qycloud:rw
       - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
+      - /Users/ruixiangzhang/workspace/Node-SaaS:/var/www/Node-SaaS:rw
+    extra_hosts:
+      - "www.zrx.dev.aysaas.com:10.5.4.17"
+      - "static.zrx.dev.aysaas.com:10.5.4.17"
+      - "fileio.zrx.dev.aysaas.com:10.5.4.17"
+      - "nodestatic.zrx.dev.aysaas.com:10.5.4.17"
     networks: 
       - webnet
     tty: true

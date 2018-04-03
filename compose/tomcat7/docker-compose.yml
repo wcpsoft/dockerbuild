@@ -7,11 +7,13 @@ services:
       - "8080:8080"
       - "5005:50005"
     volumes:
-      - /Users/ruixiangzhang/workspace/sdketl/target/sdketl-0.0.1-SNAPSHOT:/usr/local/tomcat/webapps/sdketl/:rw
+      - /Users/ruixiangzhang/workspace/SDK/target/AnYunSDK-0.0.1-SNAPSHOT:/usr/local/tomcat/webapps/AnYunSDK/:rw
+      - /Users/ruixiangzhang/dockerdata/tomcat/log:/usr/local/tomcat/logs
+      - /Users/ruixiangzhang/dockerdata/tomcat/upload_anyunsdk:/usr/local/tomcat/webapps/upload_anyunsdk
     extra_hosts:
-      - "www.zrx.dev.aysaas.com:192.168.66.247"
-      - "static.zrx.dev.aysaas.com:192.168.66.247"
-      - "fileio.zrx.dev.aysaas.com:192.168.66.247"
+      - "www.zrx.dev.aysaas.com:10.5.4.17"
+      - "static.zrx.dev.aysaas.com:10.5.4.17"
+      - "fileio.zrx.dev.aysaas.com:10.5.4.17"
     tty: true
     networks: 
       - webnet

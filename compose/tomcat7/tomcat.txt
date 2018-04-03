@@ -1,0 +1,5 @@
+- /Users/ruixiangzhang/workspace/SDK/target/AnYunSDK-0.0.1-SNAPSHOT:/usr/local/tomcat/webapps/AnYunSDK/:rw
+
+- /Users/ruixiangzhang/workspace/sdketl/target/sdketl-0.0.1-SNAPSHOT:/usr/local/tomcat/webapps/sdketl/:rw
+
+ - /Users/ruixiangzhang/workspace/springws-demo/target/SpringWS-1.0-SNAPSHOT:/usr/local/tomcat/webapps/SpringWS/:rw

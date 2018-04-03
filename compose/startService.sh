@@ -1,6 +1,6 @@
 #!/bin/sh
 declare -x qycloudworkspace="/Users/ruixiangzhang/workspace/qycloud"
-declare -x orgworkspace="/Users/ruixiangzhang/workspace/qycloud"
+declare -x orgworkspace="/Users/ruixiangzhang/workspace/org"
 read -p "是否需要更改IP:" isModifyIp
 declare -x isModifyIp
 if [ "$isModifyIp" == "y" ]; then
@@ -21,9 +21,19 @@ if [ "$isModifyIp" == "y" ]; then
     read -p "输入旧ip:" oldIp
     declare -x oldIp
     grep $oldIp -rl "$qycloudworkspace/config/development" | xargs sed -i "s/$oldIp/$newIp/g"
-    grep $oldIp -rl "$orgworkspace/config" | xargs sed -i "s/$oldIp/$newIp/g"
+    grep $oldIp -rl "$orgworkspace/conf" | xargs sed -i "s/$oldIp/$newIp/g"
     grep $oldIp -rl "../" | xargs sed -i "s/$oldIp/$newIp/g"
     grep $oldIp -rl "/Users/ruixiangzhang/dockerdata/nginx-conf" | xargs sed -i "s/$oldIp/$newIp/g"
+fi
+read -p "是否需要更改DataBase:" isDatabase
+declare -x isDatabase
+if [ "$isDatabase" == "y" ]; then
+    read -p "输入当前db:" newDB
+    declare -x newDB
+    read -p "输入旧db:" oldDB
+    declare -x oldDB
+    grep $oldDB -rl "$qycloudworkspace/config/development" | xargs sed -i "s/$oldDB/$newDB/g"
+    grep $oldDB -rl "$orgworkspace/conf" | xargs sed -i "s/$oldDB/$newDB/g"
 fi
 read -p "输入需要启动PHP版本:" phpverison
 declare -i phpverison

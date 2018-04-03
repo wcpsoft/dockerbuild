@@ -32,4 +32,12 @@ RUN apk upgrade --update && apk add \
       echo "yaf.environ=development" >> /usr/local/etc/php/conf.d/docker-php-ext-yaf.ini && \
       echo "yaf.use_namespace=ON" >> /usr/local/etc/php/conf.d/docker-php-ext-yaf.ini && \
       echo "yaf.use_spl_autoload=ON" >> /usr/local/etc/php/conf.d/docker-php-ext-yaf.ini && \
-      echo "yaf.lowcase_path=OFF" >> /usr/local/etc/php/conf.d/docker-php-ext-yaf.ini
+      echo "yaf.lowcase_path=OFF" >> /usr/local/etc/php/conf.d/docker-php-ext-yaf.ini && \
+      echo "variables_order=GPCS" >> /usr/local/etc/php/php.ini && \
+      echo "request_order=GP" >> /usr/local/etc/php/php.ini && \
+      echo "post_max_size = 100M" >> /usr/local/etc/php/php.ini && \
+      echo "date.timezone = Asia/Shanghai" >> /usr/local/etc/php/php.ini && \
+      echo 'default_charset = "UTF-8"' >> /usr/local/etc/php/php.ini && \
+      echo "upload_max_filesize = 100M" >> /usr/local/etc/php/php.ini && \
+      echo "max_file_uploads = 20" >> /usr/local/etc/php/php.ini
+      
