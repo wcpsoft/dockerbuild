@@ -2,4 +2,4 @@
 
 - /Users/ruixiangzhang/workspace/sdketl/target/sdketl-0.0.1-SNAPSHOT:/usr/local/tomcat/webapps/sdketl/:rw
 
- - /Users/ruixiangzhang/workspace/springws-demo/target/SpringWS-1.0-SNAPSHOT:/usr/local/tomcat/webapps/SpringWS/:rw
+- /Users/ruixiangzhang/workspace/sme-jws/target/sme-jws:/usr/local/tomcat/webapps/sme-jws/:rw

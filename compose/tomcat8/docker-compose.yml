@@ -1,0 +1,19 @@
+version: "3"  
+services:
+  tomcat:
+    image: daocloud.io/wcpsoft/tomcat:8.5
+    container_name: 'docker-tomcat85'
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+      - "5005:50005"
+    volumes:
+      - /Users/ruixiangzhang/workspace/wcptool/target/wcptool-0.0.1-SNAPSHOT:/usr/local/tomcat/webapps/wcptool/:rw
+      - /Users/ruixiangzhang/dockerdata/tomcat/log:/usr/local/tomcat/logs
+    tty: true
+    networks: 
+      - webnet
+    restart: always
+networks:
+  webnet:
+    driver: bridge

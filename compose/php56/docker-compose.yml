@@ -18,10 +18,10 @@ services:
       - phpfpm
       - nodejs
     extra_hosts:
-      - "www.zrx.dev.aysaas.com:10.5.4.17"
-      - "static.zrx.dev.aysaas.com:10.5.4.17"
-      - "fileio.zrx.dev.aysaas.com:10.5.4.17"
-      - "nodestatic.zrx.dev.aysaas.com:10.5.4.17"
+      - "www.zrx.dev.aysaas.com:192.168.65.40"
+      - "static.zrx.dev.aysaas.com:192.168.65.40"
+      - "fileio.zrx.dev.aysaas.com:192.168.65.40"
+      - "nodestatic.zrx.dev.aysaas.com:192.168.65.40"
     networks: 
       - webnet
     restart: always
@@ -34,10 +34,10 @@ services:
       - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
       - /Users/ruixiangzhang/workspace/Node-SaaS:/var/www/Node-SaaS:rw
     extra_hosts:
-      - "www.zrx.dev.aysaas.com:10.5.4.17"
-      - "static.zrx.dev.aysaas.com:10.5.4.17"
-      - "fileio.zrx.dev.aysaas.com:10.5.4.17"
-      - "nodestatic.zrx.dev.aysaas.com:10.5.4.17"
+      - "www.zrx.dev.aysaas.com:192.168.65.40"
+      - "static.zrx.dev.aysaas.com:192.168.65.40"
+      - "fileio.zrx.dev.aysaas.com:192.168.65.40"
+      - "nodestatic.zrx.dev.aysaas.com:192.168.65.40"
     tty: true
     networks: 
       - webnet
@@ -53,10 +53,10 @@ services:
       - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
       - /Users/ruixiangzhang/workspace/Node-SaaS:/var/www/Node-SaaS:rw
     extra_hosts:
-      - "www.zrx.dev.aysaas.com:10.5.4.17"
-      - "static.zrx.dev.aysaas.com:10.5.4.17"
-      - "fileio.zrx.dev.aysaas.com:10.5.4.17"
-      - "nodestatic.zrx.dev.aysaas.com:10.5.4.17"
+      - "www.zrx.dev.aysaas.com:192.168.65.40"
+      - "static.zrx.dev.aysaas.com:192.168.65.40"
+      - "fileio.zrx.dev.aysaas.com:192.168.65.40"
+      - "nodestatic.zrx.dev.aysaas.com:192.168.65.40"
     networks: 
       - webnet
     restart: always
@@ -71,10 +71,10 @@ services:
       - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
       - /Users/ruixiangzhang/workspace/Node-SaaS:/var/www/Node-SaaS:rw
     extra_hosts:
-      - "www.zrx.dev.aysaas.com:10.5.4.17"
-      - "static.zrx.dev.aysaas.com:10.5.4.17"
-      - "fileio.zrx.dev.aysaas.com:10.5.4.17"
-      - "nodestatic.zrx.dev.aysaas.com:10.5.4.17"
+      - "www.zrx.dev.aysaas.com:192.168.65.40"
+      - "static.zrx.dev.aysaas.com:192.168.65.40"
+      - "fileio.zrx.dev.aysaas.com:192.168.65.40"
+      - "nodestatic.zrx.dev.aysaas.com:192.168.65.40"
     tty: true
     networks: 
       - webnet
@@ -90,10 +90,10 @@ services:
       - /Users/ruixiangzhang/workspace/org:/var/www/org:rw
       - /Users/ruixiangzhang/workspace/Node-SaaS:/var/www/Node-SaaS:rw
     extra_hosts:
-      - "www.zrx.dev.aysaas.com:10.5.4.17"
-      - "static.zrx.dev.aysaas.com:10.5.4.17"
-      - "fileio.zrx.dev.aysaas.com:10.5.4.17"
-      - "nodestatic.zrx.dev.aysaas.com:10.5.4.17"
+      - "www.zrx.dev.aysaas.com:192.168.65.40"
+      - "static.zrx.dev.aysaas.com:192.168.65.40"
+      - "fileio.zrx.dev.aysaas.com:192.168.65.40"
+      - "nodestatic.zrx.dev.aysaas.com:192.168.65.40"
     networks: 
       - webnet
     tty: true
